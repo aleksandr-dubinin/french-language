@@ -14,14 +14,76 @@ label_encoder = joblib.load(label_encoder_filename)
 # Predefined article links based on difficulty level and interests
 article_links = {
     "A1": {
+        "Culture": "https://lingua.com/french/reading/fetes/",
+        "Education": "https://lingua.com/french/reading/nombres/",
+        "Finance": "https://example.com/a1-finance",
+        "Food": "https://example.com/a1-food",
+        "Health": "https://example.com/a1-health",
+        "Politics": "https://example.com/a1-politics"
+        "Science": "https://example.com/a1-science",
         "Sports": "https://example.com/a1-sports",
         "Technology": "https://example.com/a1-technology",
-        # Add more links for A1 level
+        "Travel": "https://lingua.com/french/reading/voyage/",
     },
     "A2": {
-        "Sports": "https://example.com/a2-sports",
-        "Technology": "https://example.com/a2-technology",
-        # Add more links for A2 level
+        "Culture": "https://lingua.com/french/reading/fetes/",
+        "Education": "https://lingua.com/french/reading/nombres/",
+        "Finance": "https://example.com/a1-finance",
+        "Food": "https://example.com/a1-food",
+        "Health": "https://example.com/a1-health",
+        "Politics": "https://example.com/a1-politics"
+        "Science": "https://example.com/a1-science",
+        "Sports": "https://example.com/a1-sports",
+        "Technology": "https://example.com/a1-technology",
+        "Travel": "https://lingua.com/french/reading/voyage/",
+    },
+    "B1": {
+        "Culture": "https://lingua.com/french/reading/paques/",
+        "Education": "https://progress.lawlessfrench.com/learn/listening/naissance-de-la-langue-francaise",
+        "Finance": "https://example.com/a1-finance",
+        "Food": "https://example.com/a1-food",
+        "Health": "https://example.com/a1-health",
+        "Politics": "https://example.com/a1-politics"
+        "Science": "https://example.com/a1-science",
+        "Sports": "https://example.com/a1-sports",
+        "Technology": "https://example.com/a1-technology",
+        "Travel": "https://lingua.com/french/reading/marseille/",
+    },
+    "B2": {
+        "Culture": "https://french.kwiziq.com/learn/reading/coco-chanel-portraits-francais",
+        "Education": "https://www.lawlessfrench.com/reading/emile-ou-de-leducation/",
+        "Finance": "https://example.com/a1-finance",
+        "Food": "https://example.com/a1-food",
+        "Health": "https://example.com/a1-health",
+        "Politics": "https://example.com/a1-politics"
+        "Science": "https://example.com/a1-science",
+        "Sports": "https://french.kwiziq.com/learn/reading/coupe-du-monde-1998",
+        "Technology": "https://example.com/a1-technology",
+        "Travel": "https://lingua.com/french/reading/voyage/",
+    },
+    "C1": {
+        "Culture": "https://french.kwiziq.com/learn/reading/coco-chanel-portraits-francais",
+        "Education": "https://global-exam.com/blog/en/dalf-c2-reading-writing-section/",
+        "Finance": "https://example.com/a1-finance",
+        "Food": "https://example.com/a1-food",
+        "Health": "https://example.com/a1-health",
+        "Politics": "https://example.com/a1-politics"
+        "Science": "https://example.com/a1-science",
+        "Sports": "https://example.com/a1-sports",
+        "Technology": "https://example.com/a1-technology",
+        "Travel": "https://lingua.com/french/reading/voyage/",
+    },
+    "C2": {
+        "Culture": "https://french.kwiziq.com/learn/reading/coco-chanel-portraits-francais",
+        "Education": "https://global-exam.com/blog/en/dalf-c2-reading-writing-section/",
+        "Finance": "https://example.com/a1-finance",
+        "Food": "https://example.com/a1-food",
+        "Health": "https://example.com/a1-health",
+        "Politics": "https://example.com/a1-politics"
+        "Science": "https://example.com/a1-science",
+        "Sports": "https://example.com/a1-sports",
+        "Technology": "https://example.com/a1-technology",
+        "Travel": "https://lingua.com/french/reading/voyage/",
     },
     # Add more difficulty levels and corresponding links
 }
@@ -67,7 +129,7 @@ def set_background(image_url):
     )
 
 # Set the background to a Paris view
-set_background("https://all.accor.com/magazine/imagerie/1-c4c1.jpg")
+set_background("https://media.istockphoto.com/id/1369337114/vector/france-flag-flag-illustration.jpg?s=612x612&w=0&k=20&c=ibpaq2tnkYL5D-MDaBR9HSKzwzQplrwbR1GONThTWgI=")
 
 # Set up the Streamlit interface
 st.title('French Sentence Difficulty Classifier')
@@ -76,6 +138,7 @@ sentence = st.text_input("Enter a sentence in French:", key="sentence_input", he
 if sentence:
     interests = ["Sports", "Technology", "Travel", "Food", "Health", "Science", "Education", "Culture", "Politics", "Finance"]
     user_interest = st.selectbox("Choose your interest:", interests)
+    st.markdown("</div>", unsafe_allow_html=True)
 
     if user_interest:
         difficulty = predict_difficulty(sentence)
@@ -84,9 +147,12 @@ if sentence:
         if user_interest in article_links[difficulty]:
             article_link = article_links[difficulty][user_interest]
             st.write(f"<div style='background-color:#ffffff; border:1px solid #f5f5dc; padding:10px; border-radius:5px;'>Here is an article for you: <a href='{article_link}' target='_blank'>Read here</a></div>", unsafe_allow_html=True)
-
+st.markdown("---")
+st.markdown("---")
+st.markdown("---")
 # Newsletter subscription section at the bottom
 st.markdown("---")  # Horizontal line to separate sections
+st.markdown("<div class='stNewsletter'>", unsafe_allow_html=True)
 st.write("If you like the app, subscribe to our newsletter!")
 email = st.text_input("Enter your email:", key="email_input")
 if st.button("Subscribe"):
