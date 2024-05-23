@@ -147,9 +147,9 @@ if sentence:
         if user_interest in article_links[difficulty]:
             article_link = article_links[difficulty][user_interest]
             st.write(f"<div style='background-color:#ffffff; border:1px solid #f5f5dc; padding:10px; border-radius:5px;'>Here is an article for you: <a href='{article_link}' target='_blank'>Read here</a></div>", unsafe_allow_html=True)
-st.markdown("---")
-st.markdown("---")
-st.markdown("---")
+st.markdown("")
+st.markdown("")
+st.markdown("")
 # Newsletter subscription section at the bottom
 st.markdown("---")  # Horizontal line to separate sections
 st.markdown("<div class='stNewsletter'>", unsafe_allow_html=True)
