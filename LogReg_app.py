@@ -136,7 +136,7 @@ st.title('French Sentence Difficulty Classifier')
 sentence = st.text_input("Enter a sentence in French:", key="sentence_input", help="Type a French sentence here.")
 
 if sentence:
-    interests = ["Sports", "Technology", "Travel", "Food", "Health", "Science", "Education", "Culture", "Politics", "Finance"]
+    interests = ["Choose a topic","Sports", "Technology", "Travel", "Food", "Health", "Science", "Education", "Culture", "Politics", "Finance"]
     user_interest = st.selectbox("Choose your interest:", interests)
     st.markdown("</div>", unsafe_allow_html=True)
 
