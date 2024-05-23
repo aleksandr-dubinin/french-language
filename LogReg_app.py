@@ -19,7 +19,7 @@ article_links = {
         "Finance": "https://example.com/a1-finance",
         "Food": "https://example.com/a1-food",
         "Health": "https://example.com/a1-health",
-        "Politics": "https://example.com/a1-politics"
+        "Politics": "https://example.com/a1-politics",
         "Science": "https://example.com/a1-science",
         "Sports": "https://example.com/a1-sports",
         "Technology": "https://example.com/a1-technology",
@@ -31,7 +31,7 @@ article_links = {
         "Finance": "https://example.com/a1-finance",
         "Food": "https://example.com/a1-food",
         "Health": "https://example.com/a1-health",
-        "Politics": "https://example.com/a1-politics"
+        "Politics": "https://example.com/a1-politics",
         "Science": "https://example.com/a1-science",
         "Sports": "https://example.com/a1-sports",
         "Technology": "https://example.com/a1-technology",
@@ -43,7 +43,7 @@ article_links = {
         "Finance": "https://example.com/a1-finance",
         "Food": "https://example.com/a1-food",
         "Health": "https://example.com/a1-health",
-        "Politics": "https://example.com/a1-politics"
+        "Politics": "https://example.com/a1-politics",
         "Science": "https://example.com/a1-science",
         "Sports": "https://example.com/a1-sports",
         "Technology": "https://example.com/a1-technology",
@@ -55,7 +55,7 @@ article_links = {
         "Finance": "https://example.com/a1-finance",
         "Food": "https://example.com/a1-food",
         "Health": "https://example.com/a1-health",
-        "Politics": "https://example.com/a1-politics"
+        "Politics": "https://example.com/a1-politics",
         "Science": "https://example.com/a1-science",
         "Sports": "https://french.kwiziq.com/learn/reading/coupe-du-monde-1998",
         "Technology": "https://example.com/a1-technology",
@@ -79,7 +79,7 @@ article_links = {
         "Finance": "https://example.com/a1-finance",
         "Food": "https://example.com/a1-food",
         "Health": "https://example.com/a1-health",
-        "Politics": "https://example.com/a1-politics"
+        "Politics": "https://example.com/a1-politics",
         "Science": "https://example.com/a1-science",
         "Sports": "https://example.com/a1-sports",
         "Technology": "https://example.com/a1-technology",
