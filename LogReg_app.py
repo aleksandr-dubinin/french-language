@@ -52,6 +52,15 @@ def set_background(image_url):
             background-color: #ffffff;
             border: 1px solid #f5f5dc;
         }}
+        .stTextInput {{
+            background-color: #ffffff;
+            border: 1px solid #f5f5dc;
+            padding: 10px;
+            border-radius: 5px;
+        }}
+        .stButton {{
+            margin-top: 20px;
+        }}
         </style>
         """,
         unsafe_allow_html=True
@@ -62,7 +71,7 @@ set_background("https://all.accor.com/magazine/imagerie/1-c4c1.jpg")
 
 # Set up the Streamlit interface
 st.title('French Sentence Difficulty Classifier')
-sentence = st.text_input("Enter a sentence in French:")
+sentence = st.text_input("Enter a sentence in French:", key="sentence_input", help="Type a French sentence here.")
 
 if sentence:
     interests = ["Sports", "Technology", "Travel", "Food", "Health", "Science", "Education", "Culture", "Politics", "Finance"]
@@ -70,15 +79,16 @@ if sentence:
 
     if user_interest:
         difficulty = predict_difficulty(sentence)
-        st.write(f"Predicted difficulty level of the sentence: {difficulty}")
+        st.write(f"<div style='background-color:#ffffff; border:1px solid #f5f5dc; padding:10px; border-radius:5px;'>Predicted difficulty level of the sentence: {difficulty}</div>", unsafe_allow_html=True)
 
         if user_interest in article_links[difficulty]:
             article_link = article_links[difficulty][user_interest]
-            st.write(f"Here is an article for you: [Read here]({article_link})")
+            st.write(f"<div style='background-color:#ffffff; border:1px solid #f5f5dc; padding:10px; border-radius:5px;'>Here is an article for you: <a href='{article_link}' target='_blank'>Read here</a></div>", unsafe_allow_html=True)
 
-# Newsletter subscription
+# Newsletter subscription section at the bottom
+st.markdown("---")  # Horizontal line to separate sections
 st.write("If you like the app, subscribe to our newsletter!")
-email = st.text_input("Enter your email:")
+email = st.text_input("Enter your email:", key="email_input")
 if st.button("Subscribe"):
     st.write("Thank you for subscribing!")
     st.button("Subscribe", disabled=True)
